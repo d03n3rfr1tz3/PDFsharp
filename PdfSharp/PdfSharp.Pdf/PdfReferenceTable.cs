@@ -417,8 +417,6 @@ namespace PdfSharp.Pdf
     Dictionary<PdfItem, object> overflow = new Dictionary<PdfItem, object>();
     void TransitiveClosureImplementation(Dictionary<PdfItem, object> objects, PdfObject pdfObject, ref int depth)
     {
-      if (depth-- == 0)
-        return;
       try
       {
         nestingLevel++;

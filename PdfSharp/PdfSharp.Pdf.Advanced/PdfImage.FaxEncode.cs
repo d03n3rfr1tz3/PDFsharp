@@ -359,7 +359,10 @@ namespace PdfSharp.Pdf.Advanced
         {
           if (hits > 0)
             reader.SkipBits(hits);
-          return found + hits;
+          found += hits;
+          if (found >= bitsLeft)
+              return bitsLeft;
+          return found;
         }
         found += bits;
         if (found >= bitsLeft)
@@ -385,7 +388,10 @@ namespace PdfSharp.Pdf.Advanced
         {
           if (hits > 0)
             reader.SkipBits(hits);
-          return found + hits;
+          found += hits;
+          if (found >= bitsLeft)
+              return bitsLeft;
+          return found;
         }
         found += bits;
         if (found >= bitsLeft)

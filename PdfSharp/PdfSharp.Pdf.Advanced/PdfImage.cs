@@ -814,8 +814,8 @@ namespace PdfSharp.Pdf.Advanced
 
         bool usesCcittEncoding = false;
         if (isFaxEncoding &&
-          (imageDataFax.Length < imageDataCompressed.Length ||
-          imageDataFaxCompressed.Length < imageDataCompressed.Length))
+          (imageDataFax.Length * 10 < imageDataCompressed.Length ||
+          imageDataFaxCompressed.Length * 10 < imageDataCompressed.Length))
         {
           // /CCITTFaxDecode creates the smaller file (with or without /FlateDecode):
           usesCcittEncoding = true;
